@@ -1,0 +1,32 @@
+#Below scripts will automatically log in to the particular website and looks for a customer name and subscribe automatically. This will
+take a screenshot for future reference!
+
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+import time
+driver = webdriver.Chrome("C:\\Users\\Analytics\\Python\\chromedriver\\chromedriver.exe")
+driver.maximize_window()
+driver.implicitly_wait(30)
+driver.get("https://portalURL.com")
+driver.find_element_by_id("btnAgree").click()
+driver.find_element_by_id("Customer_Number").send_keys("123456")
+driver.find_element_by_id("fromSearch_4").click()
+time.sleep(3)
+driver.find_element_by_id("fromSearch_4").click()
+time.sleep(4)
+dropDn = Select(driver.find_element_by_class_name("Select4Box"))
+dropDn.select_by_visible_text("Subscribe")
+time.sleep(4)
+driver.find_element_by_class_name("Select4Box").click()
+time.sleep(5)
+driver.find_element_by_xpath("//*[text()=' SUBMIT ']").click()
+time.sleep(5)
+driver.find_element_by_xpath("//td [text()='268']/preceding-sibling:: td [1]").click()
+driver.save_screenshot("C:\\Users\\Desktop\\Python\\Auto Subscribtion\\Screenshots\\12345_268.png")
+time.sleep(3)
+driver.find_element_by_xpath("//*[text()='Submit']").click()
+time.sleep(3)
+driver.find_element_by_id("btnSubscribe").click()
+time.sleep(5)
+driver.find_element_by_id("btnPopup").click()
+print('Successfully subscribed')
