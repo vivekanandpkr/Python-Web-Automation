@@ -26,4 +26,3 @@ for num in my_list:
 
 my_book.save('Updated3.xlsx')
 print(t_row)
-
