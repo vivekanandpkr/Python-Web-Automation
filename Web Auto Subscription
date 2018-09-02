@@ -1,15 +1,15 @@
-#Below scripts will automatically log in to the particular website and looks for a customer name and subscribe automatically. This will
-take a screenshot for future reference!
+#Below scripts will play with any website and look & fetch the information which we need.
+#Also, This will take a screenshot for future reference!
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import time
-driver = webdriver.Chrome("C:\\Users\\Analytics\\Python\\chromedriver\\chromedriver.exe")
+driver = webdriver.Chrome("C:\\Users\\chromedriver\\chromedriver.exe")                        #Enter the driver location
 driver.maximize_window()
 driver.implicitly_wait(30)
-driver.get("https://portalURL.com")
-driver.find_element_by_id("btnAgree").click()
-driver.find_element_by_id("Customer_Number").send_keys("123456")
+driver.get("https://portalURL.com")                                                           #Update the URL which you want to play with.
+driver.find_element_by_id("btnAgree").click() 
+driver.find_element_by_id("Customer_Number").send_keys("123456")                              #Update the respective xpath.
 driver.find_element_by_id("fromSearch_4").click()
 time.sleep(3)
 driver.find_element_by_id("fromSearch_4").click()
@@ -21,8 +21,8 @@ driver.find_element_by_class_name("Select4Box").click()
 time.sleep(5)
 driver.find_element_by_xpath("//*[text()=' SUBMIT ']").click()
 time.sleep(5)
-driver.find_element_by_xpath("//td [text()='268']/preceding-sibling:: td [1]").click()
-driver.save_screenshot("C:\\Users\\Desktop\\Python\\Auto Subscribtion\\Screenshots\\12345_268.png")
+driver.find_element_by_xpath("//td [text()='123']/preceding-sibling:: td [1]").click()
+driver.save_screenshot("C:\\Users\\Auto Subscribtion\\Screenshots\\12345_268.png")
 time.sleep(3)
 driver.find_element_by_xpath("//*[text()='Submit']").click()
 time.sleep(3)
